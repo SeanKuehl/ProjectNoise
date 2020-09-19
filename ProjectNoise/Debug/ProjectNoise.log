@@ -1,0 +1,19 @@
+﻿  Process.cpp
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(103): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(123): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(143): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(247): warning C4018: '<': signed/unsigned mismatch
+  ProjectNoise.cpp
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(103): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(123): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(143): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(247): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(15): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  ProjectNoise.vcxproj -> C:\Users\turqo\source\repos\ProjectNoise\Debug\ProjectNoise.exe
