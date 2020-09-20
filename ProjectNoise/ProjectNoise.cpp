@@ -55,23 +55,34 @@ int main()
 {
 	
 	std::string input;
+	std::string closeCommand = "!";
 	std::vector<char> toPass;
     std::cout << "Welcome to Project Noise! Enter some text you want to be turned into speech!\n";
-	std::cin >> input;
-	//note: cin doesn't allow a line of only whitespace, cool!
+	std::cout << "Enter '!' at anytime to close this application.\n";
+	//std::cin >> input;
+	while (input != closeCommand) {
+		std::getline(std::cin, input);
 
-	//if input is valid, turn it into char array(the only thing the computer will accept later on in comparisons)
-	//and pass it to Process
-	if (ValidateInput(input)) {
-		//convert to char array and pass to process
-		toPass = ConvertInput(input);
-		std::cout << "valid input";
-		Process process = Process(toPass);
 
+		//if input is valid, turn it into char array(the only thing the computer will accept later on in comparisons)
+		//and pass it to Process
+		if (ValidateInput(input) && input != closeCommand) {
+			//convert to char array and pass to process
+			toPass = ConvertInput(input);
+			
+			Process process = Process(toPass);
+			std::cout << "Enter in another or enter '!' to close.\n";
+
+		}
+		else if (input != closeCommand) {
+			std::cout << "invalid input\n";
+		}
+		else {
+			//set the program to close on the next loop
+			input = closeCommand;
+		}
 	}
-	else {
-		std::cout << "invalid input";
-	}
+	
 	
 	
 	//validate input works

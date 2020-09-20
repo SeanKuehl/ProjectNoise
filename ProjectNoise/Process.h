@@ -37,11 +37,7 @@ public:
 	//this is needed so SoundEndReceiver can communicate
 	
 	
-	void CallPlaySounds(int i) {
-		std::cout << "this is a good sign";
-		//PlaySounds(i);
-
-	}
+	
 
 	
 
@@ -54,7 +50,8 @@ public:
 		RemoveSpacing();
 		RemoveJunk();
 		PathReplace();
-		PlaySounds(0);
+		PlaySounds();
+		//PlaySounds(0);
 	}
 
 	
@@ -64,6 +61,8 @@ private:
 
 	std::vector<char> inputList;	//this is so I don't have to keep returning it
 	std::vector<std::string> outputList;	//this will be the list of paths
+	ISoundEngine* engine = createIrrKlangDevice();
+	irrklang::ISound* snd;
 
 	bool Contains(char toFind, std::string toReplace) {
 		
@@ -133,118 +132,72 @@ private:
 	}
 
 	void PathReplace() {
-		
-
 		//replace each char with the path to their sound
 		std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
+		char listItem;
+		char alphabetItem;
+		std::string outputListItem;
 		//the best thing I can think of to assign the paths is a giant switch statement, there must be something better?
-		
-		for (int i = 0; i < inputList.size(); i++) {
-			if (inputList[i] == 'a' || inputList[i] == 'A') {
-				outputList.push_back("A.wav");	//add the 'a' path
-			}
-			else if (inputList[i] == 'b' || inputList[i] == 'B') {
-				outputList.push_back("B.wav");	//add the 'b' path
-			}
-			else if (inputList[i] == 'c' || inputList[i] == 'C') {
-				outputList.push_back("C.wav");	//add the 'c' path
-			}
-			else if (inputList[i] == 'd' || inputList[i] == 'D') {
-				outputList.push_back("D.wav");	//add the 'd' path
-			}
-			else if (inputList[i] == 'e' || inputList[i] == 'E') {
-				outputList.push_back("E.wav");	//add the 'e' path
-			}
-			else if (inputList[i] == 'f' || inputList[i] == 'F') {
-				outputList.push_back("F.wav");	//add the 'f' path
-			}
-			else if (inputList[i] == 'g' || inputList[i] == 'G') {
-				outputList.push_back("G.wav");	//add the 'g' path
-			}
-			else if (inputList[i] == 'h' || inputList[i] == 'H') {
-				outputList.push_back("H.wav");	//add the 'h' path
-			}
-			else if (inputList[i] == 'i' || inputList[i] == 'I') {
-				outputList.push_back("I.wav");	//add the 'i' path
-			}
-			else if (inputList[i] == 'j' || inputList[i] == 'J') {
-				outputList.push_back("J.wav");	//add the 'j' path
-			}
-			else if (inputList[i] == 'k' || inputList[i] == 'K') {
-				outputList.push_back("K.wav");	//add the 'k' path
-			}
-			else if (inputList[i] == 'l' || inputList[i] == 'L') {
-				outputList.push_back("L.wav");	//add the 'l' path
-			}
-			else if (inputList[i] == 'm' || inputList[i] == 'M') {
-				outputList.push_back("M.wav");	//add the 'm' path
-			}
-			else if (inputList[i] == 'n' || inputList[i] == 'N') {
-				outputList.push_back("N.wav");	//add the 'n' path
-			}
-			else if (inputList[i] == 'o' || inputList[i] == 'O') {
-				outputList.push_back("O.wav");	//add the 'o' path
-			}
-			else if (inputList[i] == 'p' || inputList[i] == 'P') {
-				outputList.push_back("P.wav");	//add the 'p' path
-			}
-			else if (inputList[i] == 'q' || inputList[i] == 'Q') {
-				outputList.push_back("Q.wav");	//add the 'q' path
-			}
-			else if (inputList[i] == 'r' || inputList[i] == 'R') {
-				outputList.push_back("R.wav");	//add the 'r' path
-			}
-			else if (inputList[i] == 's' || inputList[i] == 'S') {
-				outputList.push_back("S.wav");	//add the 's' path
-			}
-			else if (inputList[i] == 't' || inputList[i] == 'T') {
-				outputList.push_back("T.wav");	//add the 't' path
-			}
-			else if (inputList[i] == 'u' || inputList[i] == 'U') {
-				outputList.push_back("U.wav");	//add the 'u' path
-			}
-			else if (inputList[i] == 'v' || inputList[i] == 'V') {
-				outputList.push_back("V.wav");	//add the 'v' path
-			}
-			else if (inputList[i] == 'w' || inputList[i] == 'W') {
-				outputList.push_back("W.wav");	//add the 'w' path
 
-			}
-			else if (inputList[i] == 'x' || inputList[i] == 'X') {
-				outputList.push_back("X.wav");	//add the 'x' path
-			}
-			else if (inputList[i] == 'y' || inputList[i] == 'Y') {
-				outputList.push_back("Y.wav");	//add the 'a' path
-			}
-			else if (inputList[i] == 'z' || inputList[i] == 'Z') {
-				outputList.push_back("Z.wav");	//add the 'a' path
-			}
-			else if (inputList[i] == '.') {
-				//replace it with double so it's a string and not a char
+		//note: fix this! This is disgusting!
+		for (int i = 0; i < inputList.size(); i++) {
+			listItem = inputList[i];
+			//check for spaces and periods here!
+
+			if (listItem == '.') {
 				outputList.push_back("..");
 			}
-			else if (inputList[i] == ' ') {
-				//replace it with double so it's a string and not a char
+			else if (listItem == ' ') {
 				outputList.push_back("  ");
 			}
+			else {
+				for (int j = 0; j < alphabet.size(); j++) {
+					if (alphabet[j] == listItem) {
+						//item could be lower case,
+						//but all files are upper case
+						alphabetItem = alphabet[j];
+						alphabetItem = toupper(alphabetItem);	//make alphaitem uppercase
+						outputListItem += alphabetItem;
+						outputListItem += ".wav";
+						
+						outputList.push_back(outputListItem);
+						//get outputListItem ready for the next iteration
+						outputListItem = "";
 
-				
+					}
+			}
+
+			
+			}
+
+			
+
+
 		}
-
 	}
 
-	void PlaySounds(int counter) {
-		//I need to make my own sleep/wait function
+	
+
+	
+
+	
+		//for item in string list(but I'll have to treat these like chars because they're singles)
+
+	void PlaySounds() {
+		//why can't it just take in a list/vector as input?
+		//make a new and better playsounds func that doesn't call itself
 
 		std::cout << "\n";
-		ISoundEngine* engine = createIrrKlangDevice();
-		
-		char const * sound = "";	//this is needed for conversions
+		//ISoundEngine* engine = createIrrKlangDevice();
+		//irrklang::ISound* snd;
+		//make the irrklang devices global so I'm not calling them anew each
+		//time I call this function
+		char const* sound = "";	//this is needed for conversions
 		std::string str;
+		
 
 
-		for (counter; counter < outputList.size(); counter++) {
+		for (int counter = 0; counter < outputList.size(); counter++) {
 			str = outputList[counter];
 			//it reaches here and output what I'd expect
 			sound = str.c_str(); //if I can do this, sound works without errors in play2d
@@ -258,25 +211,27 @@ private:
 			}
 			else if (str.compare("  ") == 0) {
 				//if it's a space
-				
+
 				//wait for half a second
 				WaitM((milliseconds)500);
 
 			}
 			else {
-				//try the case "hello there!" it seems to have trouble
-				//for now it works for any single word
-				
+
+
 
 				do {
-					
-					irrklang::ISound* snd = engine->play2D(sound, false, false, true);
-					
+
+					snd = engine->play2D(sound, false, false, true);
+
 					//engine->play2D(str.c_str(), true);
 					while (snd->isFinished() == false) {
 						//do nothing
 					}
-					PlaySounds(counter+1);
+					
+					break;
+					//PlaySounds(counter + 1);	//play the next sound
+
 					//engine->play2D("getout.ogg");
 
 				} while (_getch() != 'q');
@@ -315,66 +270,11 @@ private:
 	}
 
 	
-		//for item in string list(but I'll have to treat these like chars because they're singles)
-
-
-
-	void God() {
-		std::cout << "yo momma";
-		std::cout << "\n";
-	}
 
 	
 	
 
-	void Test() {
-		bool done = false;
-		std::cout << "\n";
-		std::string str = "A.wav";
-		ISoundEngine* engine = createIrrKlangDevice();
-		//my wav files play, so it's not that
-		
-		
-		char const * sound = "getout.ogg";	//this is needed for conversions
-
-
-		
-			
-			//str.c_str()
-		do {
-			
-			irrklang::ISound* snd = engine->play2D(str.c_str(), false, false, true);
-			//engine->play2D(str.c_str(), true);
-			while (snd->isFinished() == false) {
-				//do nothing
-			}
-			God();
-			//if it's reached here, it's done, in theory
-
-			
-				//snd->setSoundStopEventReceiver(endR);
-				//done =  irrklang::ISoundEngine::isCurrentlyPlaying(snd);
-				
-				//a nonstatic member reference must be relative to a specific object
-				//only continue the loop once the sound is done, call this func in the endR func
-			
-			
-
-			
-			
-			
-			//engine->play2D("getout.ogg", true);
-
-		} while (_getch() != 'q');
-		
-		
-		
-		//irrklang::ISound* snd = engine->play2D(str.c_str(), false, false, true);
-		//if (snd) {
-		//	snd->setSoundStopEventReceiver(endR);
-		//}
-
-	}
+	
 
 
 

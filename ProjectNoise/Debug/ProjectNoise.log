@@ -1,19 +1,23 @@
 ﻿  Process.cpp
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(72): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(89): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(103): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(123): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(143): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(247): warning C4018: '<': signed/unsigned mismatch
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(71,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(88,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(102,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(122,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(143,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(154,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(200,33): warning C4018: '<': signed/unsigned mismatch
   ProjectNoise.cpp
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(72): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(89): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(103): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(123): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(143): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\process.h(247): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(15): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(33): warning C4018: '<': signed/unsigned mismatch
-c:\users\turqo\source\repos\projectnoise\projectnoise\projectnoise.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(71,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(88,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(102,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(122,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(143,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(154,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\Process.h(200,33): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\ProjectNoise.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\ProjectNoise.cpp(33,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\ProjectNoise\ProjectNoise.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  ProjectNoise.vcxproj -> C:\Users\turqo\source\repos\ProjectNoise\Debug\ProjectNoise.exe
+  ProjectNoise.vcxproj -> C:\Users\turqo\OneDrive\Desktop\fotgithub\ProjectNoise\Debug\ProjectNoise.exe
