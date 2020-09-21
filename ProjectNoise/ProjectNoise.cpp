@@ -1,5 +1,7 @@
-// ProjectNoise.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//Sean Kuehl
+//2020 09 21
+//ProjectNoise.cpp
+//get user input, if it's valid send to process.h to play it's sounds
 
 #include <iostream>
 #include <string>
@@ -9,6 +11,8 @@
 
 
 bool Contains(char toFind) {
+	//check if the given char is a part of the alphabet
+
 	std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	
@@ -25,15 +29,16 @@ bool Contains(char toFind) {
 
 bool ValidateInput(std::string str) {
 	//this will see if there's any pronouncable 
-	//character in the input, to see if it's valid
+	//character in the input, to see if it's a valid input
 	
 
 
 	
 	for (int i = 0; i < str.size(); i++) {
-		//if the character is in alphabet, return true and break
+		
 		if (Contains(str[i])) {
-			//this checks if alphabet contains str
+			//if the char is in the alphabet, return true
+			//else return false
 			
 			return true;
 			break;
@@ -44,6 +49,9 @@ bool ValidateInput(std::string str) {
 }
 
 std::vector<char> ConvertInput(std::string str) {
+	//conert the string into a char array so it's easier to work with
+	//when I need to swap the letters with sound files(see Process.h)
+
 	std::vector<char> toReturn;
 	for (int i = 0; i < str.size(); i++) {
 		toReturn.push_back(str[i]);
@@ -56,22 +64,26 @@ int main()
 	
 	std::string input;
 	std::string closeCommand = "!";
-	std::vector<char> toPass;
+	std::vector<char> toPass;	//value to be sent onward to Process.h
     std::cout << "Welcome to Project Noise! Enter some text you want to be turned into speech!\n";
 	std::cout << "Enter '!' at anytime to close this application.\n";
-	//std::cin >> input;
+	
 	while (input != closeCommand) {
 		std::getline(std::cin, input);
 
 
-		//if input is valid, turn it into char array(the only thing the computer will accept later on in comparisons)
-		//and pass it to Process
+		
 		if (ValidateInput(input) && input != closeCommand) {
-			//convert to char array and pass to process
-			toPass = ConvertInput(input);
+			//if input is valid, turn it into char array
+			//and pass it to Process.h
+
+
+			
+			toPass = ConvertInput(input);	//convert input to char array
 			
 			Process process = Process(toPass);
-			std::cout << "Enter in another or enter '!' to close.\n";
+
+			std::cout << "Enter in another or enter '!' to close.\n";	//once finished, prepare to start the loop again
 
 		}
 		else if (input != closeCommand) {
@@ -85,7 +97,7 @@ int main()
 	
 	
 	
-	//validate input works
+
 	
 	
 }
@@ -96,13 +108,4 @@ int main()
 
 
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
