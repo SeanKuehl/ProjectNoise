@@ -159,11 +159,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Process.cpp" />
-    <ClCompile Include="ProjectNoise.cpp" />
+    <ClCompile Include="src\Process.cpp" />
+    <ClCompile Include="src\ProjectNoise.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Process.h" />
+    <ClInclude Include="src\Process.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
