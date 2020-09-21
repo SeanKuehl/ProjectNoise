@@ -15,8 +15,8 @@ bool Contains(char toFind) {
 
 	std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	
-	for (int i = 0; i < alphabet.size(); i++) {
+	//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+	for (unsigned int i = 0; i < alphabet.size(); i++) {
 		if (toFind == alphabet[i]) {
 			return true;
 			break;
@@ -33,8 +33,8 @@ bool ValidateInput(std::string str) {
 	
 
 
-	
-	for (int i = 0; i < str.size(); i++) {
+	//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+	for (unsigned int i = 0; i < str.size(); i++) {
 		
 		if (Contains(str[i])) {
 			//if the char is in the alphabet, return true
@@ -53,7 +53,9 @@ std::vector<char> ConvertInput(std::string str) {
 	//when I need to swap the letters with sound files(see Process.h)
 
 	std::vector<char> toReturn;
-	for (int i = 0; i < str.size(); i++) {
+
+	//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+	for (unsigned int i = 0; i < str.size(); i++) {
 		toReturn.push_back(str[i]);
 	}
 	return toReturn;

@@ -75,8 +75,8 @@ private:
 	bool Contains(char toFind, std::string toReplace) {
 		
 
-
-		for (int i = 0; i < toReplace.size(); i++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int i = 0; i < toReplace.size(); i++) {
 			if (toFind == toReplace[i]) {
 				return true;
 				break;
@@ -92,8 +92,8 @@ private:
 		//so later they can be more easily replaced with sound files
 		
 		
-
-		for (int i = 0; i < inputList.size(); i++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int i = 0; i < inputList.size(); i++) {
 			if (Contains(inputList[i], "!?,;:")) {
 				inputList[i] = '.';
 			}
@@ -106,7 +106,8 @@ private:
 	void RemoveDoubles() {
 		//remove double spacing and characters like the second 'b' in 'abba'
 		
-		for (int i = 1; i < inputList.size(); i++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int i = 1; i < inputList.size(); i++) {
 			if (inputList[i] == inputList[i-1]) {
 				
 				
@@ -124,8 +125,8 @@ private:
 		std::string alphabetAndPeriod = "!?,;:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
 		
 		
-
-		for (int i = 0; i < inputList.size(); i++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int i = 0; i < inputList.size(); i++) {
 			if (Contains(inputList[i], alphabetAndPeriod)) {
 				//if the character has an effect, do nothing
 			}
@@ -145,8 +146,8 @@ private:
 		std::string outputListItem;
 		
 
-		
-		for (int i = 0; i < inputList.size(); i++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int i = 0; i < inputList.size(); i++) {
 			listItem = inputList[i];
 			
 			//periods and spaces have no sound file and are instead pauses
@@ -159,7 +160,8 @@ private:
 			}
 			else {
 				
-				for (int j = 0; j < alphabet.size(); j++) {
+				//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+				for (unsigned int j = 0; j < alphabet.size(); j++) {
 					if (alphabet[j] == listItem) {
 						//item could be lower case,
 						//but all files are upper case
@@ -201,8 +203,8 @@ private:
 		std::string str;
 		
 
-
-		for (int counter = 0; counter < outputList.size(); counter++) {
+		//below is unsigned int in order to remove signed/unsigned mismatch compiler warning
+		for (unsigned int counter = 0; counter < outputList.size(); counter++) {
 			str = outputList[counter];
 			
 			sound = str.c_str();	//convert string to const char so play2D will accept it
